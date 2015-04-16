@@ -2,3 +2,5 @@
 Debug/
 bin/
 *.sln.ide/
+__pycache__/
+*.py[cod]
