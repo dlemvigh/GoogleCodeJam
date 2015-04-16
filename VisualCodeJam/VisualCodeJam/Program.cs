@@ -10,6 +10,7 @@ namespace VisualCodeJam
     {
         static void Main(string[] args)
         {
+            CaseFileRunner.Solve<MinimumScalarProduct.MSPSolver>("A-large-practice");
 
         }
     }

@@ -14,8 +14,15 @@ namespace VisualCodeJam
         {
             var solver = new T();
 
-            solver.Reader = new StreamReader(caseName + ".in");
-            solver.Writer = new StreamWriter(caseName + ".out");
+            var solverNamespace = typeof(T).Namespace;
+            var runnerNamespace = typeof(CaseFileRunner).Namespace;
+            var relativeNamespace = solverNamespace
+                .Replace(runnerNamespace, "")
+                .Replace('.', '/');
+
+            var path = "../.." + relativeNamespace + "/";
+            solver.Reader = new StreamReader(path + caseName + ".in");
+            solver.Writer = new StreamWriter(path + caseName + ".out");
 
             solver.SolveAll();
 

@@ -9,8 +9,8 @@ namespace VisualCodeJam
 {
     public abstract class AbstractSolver
     {
-        public StreamReader Reader { get; set; }
-        public StreamWriter Writer { get; set; }
+        public TextReader Reader { get; set; }
+        public TextWriter Writer { get; set; }
 
         public void SolveAll()
         {
@@ -25,6 +25,6 @@ namespace VisualCodeJam
                 }
             }
         }
-        protected abstract string Solve();
+        public abstract string Solve();
     }
 }
