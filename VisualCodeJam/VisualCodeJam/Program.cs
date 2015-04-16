@@ -10,6 +10,7 @@ namespace VisualCodeJam
     {
         static void Main(string[] args)
         {
+
         }
     }
 }
