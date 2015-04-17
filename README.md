@@ -12,15 +12,16 @@ From there the abstract base class provides a textreader and textwriter for the 
 
 A simple EchoSolver would look something like this
 
-	```csharp
-	public class EchoSolver : AbstractSolver
+```csharp
+public class EchoSolver : AbstractSolver
+{
+	public override string Solve()
 	{
-		public override string Solve()
-		{
-			var line = Reader.ReadLine();
-			return line;
-		}
+		var line = Reader.ReadLine();
+		return line;
 	}
+}
+```
 
 the goal was to remove as much boilerplate from the implementing solver as possible.
 
@@ -29,10 +30,11 @@ the goal was to remove as much boilerplate from the implementing solver as possi
 The python solver is fairly simple.
 each solver is expected to implement a single method
 
-	```python
-	def solve(buffer):
-		line = buffer.readline()
-		return line
+```python
+def solve(buffer):
+	line = buffer.readline()
+	return line
+```
 
 ## Project Euler
 
