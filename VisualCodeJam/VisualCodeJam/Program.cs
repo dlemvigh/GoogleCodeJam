@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using VisualCodeJam.MushroomMonster;
 
 namespace VisualCodeJam
 {
@@ -10,7 +11,7 @@ namespace VisualCodeJam
     {
         static void Main(string[] args)
         {
-            CaseFileRunner.Solve<MinimumScalarProduct.MSPSolver>("A-large-practice");
+            CaseFileRunner.Solve<MushroomMonsterSolver>("A-large-practice");
 
         }
     }
