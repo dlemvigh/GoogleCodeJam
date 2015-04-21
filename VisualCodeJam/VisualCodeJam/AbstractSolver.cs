@@ -26,5 +26,29 @@ namespace VisualCodeJam
             }
         }
         public abstract string Solve();
+
+        public IEnumerable<int> parseIntList(string line)
+        {
+            return line.Split(' ').Select(x => int.Parse(x));
+        }
+
+        public static int GCD(int a, int b)
+        {
+            return b == 0 ? a : GCD(b, a % b);
+        }
+        public static int GCD(IEnumerable<int> numbers)
+        {
+            return numbers.Aggregate(GCD);
+        }
+
+        public static int LCM(int a, int b)
+        {
+            return a * b / GCD(a, b);
+        }
+
+        public static int LCM(IEnumerable<int> numbers)
+        {
+            return numbers.Aggregate(LCM);
+        }
     }
 }

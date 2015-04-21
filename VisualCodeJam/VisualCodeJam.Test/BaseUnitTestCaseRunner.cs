@@ -9,28 +9,39 @@ namespace VisualCodeJam.Test
 {
     public class BaseUnitTestCaseRunner
     {
+        protected static string baseDir = null;
+
         public static string SingleCase<T>(string input)
             where T : AbstractSolver, new()
         {
             var solver = new T();
-            InitStreams(solver, input);
+            solver.Reader = new StringReader(input);
 
-            var result = solver.Solve();            
+            var result = solver.Solve();
 
-            CloseStreams(solver);
+            solver.Reader.Close();
 
             return result;
         }
 
-        private static void InitStreams<T>(T solver, string input)
-            where T : AbstractSolver
+        public static void File<T>(string path)
+            where T : AbstractSolver, new()
         {
-            solver.Reader = new StringReader(input);
-        }
-        private static void CloseStreams<T>(T solver)
-            where T : AbstractSolver
-        {
+            var solver = new T();
+
+            if (!string.IsNullOrEmpty(baseDir))
+            {
+                path = Path.Combine(baseDir, path);
+            }
+
+            solver.Reader = new StreamReader(path + ".in");
+            solver.Writer = new StreamWriter(path + ".out");
+
+            solver.SolveAll();
+
             solver.Reader.Close();
+            solver.Writer.Flush();
+            solver.Writer.Close();
         }
     }
 }

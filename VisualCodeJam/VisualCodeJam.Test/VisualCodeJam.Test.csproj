@@ -51,6 +51,7 @@
   </Choose>
   <ItemGroup>
     <Compile Include="BaseUnitTestCaseRunner.cs" />
+    <Compile Include="HaircutTest.cs" />
     <Compile Include="MushroomMonsterTest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

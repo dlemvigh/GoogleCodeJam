@@ -8,6 +8,12 @@ namespace VisualCodeJam.Test
     [TestClass]
     public class MushroomMonsterTest : BaseUnitTestCaseRunner
     {
+        [TestInitialize]
+        public void Init()
+        {
+            baseDir = @"C:\Users\dale\Downloads";
+        }
+
         [TestMethod]
         public void TestMethod1()
         {
