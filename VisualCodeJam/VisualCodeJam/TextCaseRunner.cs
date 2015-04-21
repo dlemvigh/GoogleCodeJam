@@ -22,6 +22,16 @@ namespace VisualCodeJam
             Halt();
         }
 
+        public static void SingleCase(string input, Func<TextReader, string> solver)
+        {
+            using (var reader = new StringReader(input))
+            {
+                var result = solver(reader);
+                Console.WriteLine(result);
+            }
+            Halt();
+        }
+
         public static void AllCases<T>(string input)
             where T : AbstractSolver, new()
         {

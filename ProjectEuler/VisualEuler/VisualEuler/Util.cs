@@ -44,5 +44,17 @@ namespace VisualEuler
             }
         }
 
+        public static IEnumerable<DateTime> Date(DateTime from, DateTime? to = null)
+        {
+            var value = from;
+            while (!to.HasValue || value <= to)
+            {
+                yield return value;
+                value = value.AddDays(1);
+            }
+
+        }
+
+        public static Func<int, int, int> aggr_factorial = (a, b) => a * b;
     }
 }

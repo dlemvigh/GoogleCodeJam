@@ -10,7 +10,7 @@ namespace VisualEuler
     {
         static void Main(string[] args)
         {
-            Euler_8();
+            Euler_59();
             Halt();
         }
 
