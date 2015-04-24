@@ -32,21 +32,21 @@ namespace VisualCodeJam
             return line.Split(' ').Select(x => int.Parse(x));
         }
 
-        public static int GCD(int a, int b)
+        public static long GCD(long a, long b)
         {
             return b == 0 ? a : GCD(b, a % b);
         }
-        public static int GCD(IEnumerable<int> numbers)
+        public static long GCD(IEnumerable<long> numbers)
         {
             return numbers.Aggregate(GCD);
         }
 
-        public static int LCM(int a, int b)
+        public static long LCM(long a, long b)
         {
             return a * b / GCD(a, b);
         }
 
-        public static int LCM(IEnumerable<int> numbers)
+        public static long LCM(IEnumerable<long> numbers)
         {
             return numbers.Aggregate(LCM);
         }

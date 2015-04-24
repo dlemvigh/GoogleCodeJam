@@ -45,6 +45,7 @@
     <Compile Include="AbstractSolver.cs" />
     <Compile Include="CaseFileRunner.cs" />
     <Compile Include="HaircutSolver.cs" />
+    <Compile Include="LoggingSolver.cs" />
     <Compile Include="MinimumScalarProduct\MSPSolver.cs" />
     <Compile Include="MushroomMonster\MushroomMonsterSolver.cs" />
     <Compile Include="Program.cs" />

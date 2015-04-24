@@ -15,22 +15,30 @@ namespace VisualCodeJam
             var B = ints.First();
             var N = ints.Last();
 
-            var M = parseIntList(Reader.ReadLine());
+            line = Reader.ReadLine();
+            var M = line.Split(' ').Select(x => long.Parse(x)).ToList();
             var cycle_time = LCM(M);
-            var cycle_haircuts = M.Aggregate(0, (sum, next) => sum + cycle_time / next);
-
-            var b = B % cycle_haircuts;
+            var cycle_haircuts = M.Aggregate(0L, (sum, next) => sum + cycle_time / next);
 
             var barbers = new SortedSet<Barber>();
-            var b2 = M.Select(x => new Barber(x));
+            for(var i = 0; i < M.Count(); i++)
+            {
+                var barber = new Barber(M[i], i);
+                barbers.Add(barber);
+            }
 
-            while (b > 1)
+            var n = N % cycle_haircuts;
+            if (n == 0)
+            {
+                n = cycle_haircuts;
+            }
+            while (n > 1)
             {
                 var barber = barbers.First();
                 barbers.Remove(barber);
                 barber.Next();
                 barbers.Add(barber);
-                b--;
+                n--;
             }
             var index = barbers.First().Index;
             return (index + 1).ToString();
@@ -39,15 +47,13 @@ namespace VisualCodeJam
 
         class Barber : IComparable<Barber>
         {
-            public int Speed { get; set; }
-            public int NextAvailable { get; set; }
+            public long Speed { get; set; }
+            public long NextAvailable { get; set; }
             public int Index { get; set; }
 
-            private static int counter = 0;
-
-            public Barber(int speed)
+            public Barber(long speed, int index)
             {
-                Index = counter++;
+                Index = index;
                 Speed = speed;
             }
 
@@ -60,9 +66,24 @@ namespace VisualCodeJam
             {
                 if (NextAvailable == other.NextAvailable)
                 {
-                    Index.CompareTo(other.Index);
+                    return Index.CompareTo(other.Index);
                 }
                 return NextAvailable.CompareTo(other.NextAvailable);
+            }
+
+            public override bool Equals(object obj)
+            {
+                if (obj is Barber)
+                {
+                    var barber = obj as Barber;
+                    return Index.Equals(barber.Index);
+                }
+                return base.Equals(obj);
+            }
+
+            public override int GetHashCode()
+            {
+                return base.GetHashCode();
             }
         }
     }

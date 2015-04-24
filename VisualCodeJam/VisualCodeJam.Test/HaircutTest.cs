@@ -36,5 +36,17 @@ namespace VisualCodeJam.Test
 
             Assert.AreEqual(expected, actual);
         }
+
+        [TestMethod]
+        public void TestFileSmall()
+        {
+            File<HaircutSolver>("B-small-practice");
+        }
+
+        [TestMethod]
+        public void TestFileLarge()
+        {
+            File<HaircutSolver>("B-large-practice");
+        }
     }
 }
