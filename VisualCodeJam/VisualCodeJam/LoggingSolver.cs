@@ -38,7 +38,7 @@ namespace VisualCodeJam
                     {
                         var PT = T - P;
                         var angle = PQ.GetAngle(PT);
-                        if (angle < Math.PI)
+                        if (angle < Math.PI && angle > 0)
                         {
                             //T is left of PQ
                             count++;
