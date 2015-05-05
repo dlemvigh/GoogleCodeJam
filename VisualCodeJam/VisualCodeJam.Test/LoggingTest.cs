@@ -54,5 +54,19 @@ namespace VisualCodeJam.Test
 0";
             SingleCase<LoggingSolver>(input, output);
         }
+
+        [TestMethod]
+        public void TestFileSmall()
+        {
+            File<LoggingSolver>("C-small-practice");
+            Assert.Inconclusive();
+        }
+
+        [TestMethod]
+        public void TestFileLarge()
+        {
+            File<LoggingSolver>("C-large-practice");
+            Assert.Inconclusive();
+        }
     }
 }

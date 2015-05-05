@@ -11,10 +11,6 @@ namespace VisualCodeJam
     {
         public override string Solve()
         {
-            var p1 = new Point(1, 1);
-            var p2 = new Point(3, 3);
-            var p3 = new Point(3, -3);
-
             var line = Reader.ReadLine();
             var N = int.Parse(line);
 
@@ -93,16 +89,6 @@ namespace VisualCodeJam
             public static Point operator -(Point a, Point b)
             {
                 return new Point(a.X - b.X, a.Y - b.Y);
-            }
-
-            public static bool operator ==(Point a, Point b)
-            {
-                return a.X == b.X && a.Y == b.Y;
-            }
-
-            public static bool operator !=(Point a, Point b)
-            {
-                return a.X != b.X || a.Y != b.Y;
             }
         }
     }
