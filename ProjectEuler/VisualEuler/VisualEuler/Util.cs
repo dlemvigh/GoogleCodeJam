@@ -56,5 +56,32 @@ namespace VisualEuler
         }
 
         public static Func<int, int, int> aggr_factorial = (a, b) => a * b;
-    }
+
+        public static T QuickSort<T> (T list)
+            where T : IEnumerable<IComparable>
+        {
+            if (list.Count() <= 1)
+            {
+                return list;
+            }
+
+            var rand = new Random();
+            var i = rand.Next(list.Count());
+            var pivot = list.Skip(i - 1).First();
+
+            var left = list.Where(x => x.CompareTo(pivot) < 0);
+            var middle = list.Where(x => x.CompareTo(pivot) == 0);
+            var right = list.Where(x => x.CompareTo(pivot) > 0);
+
+            left = QuickSort(left);
+            right = QuickSort(right);
+
+            return (T) left.Concat(middle).Concat(right);
+        }
+
+        public static void QuickSort<T>(T[] list, int? start = null, int? end = null)
+        {
+
+        }
+   }
 }

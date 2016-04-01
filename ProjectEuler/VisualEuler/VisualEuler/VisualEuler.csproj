@@ -54,6 +54,9 @@
     <WCFMetadata Include="Service References\" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="base64pdf.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <Content Include="p022_names.txt">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
