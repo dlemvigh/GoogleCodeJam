@@ -11,16 +11,14 @@ namespace VisualEuler
     {
         static void Main(string[] args)
         {
-            using (var reader = new StreamReader("base64pdf.txt"))
-            using(var writer = new BinaryWriter("binary.pdf"))
+            string input = null;
+            input = "5H 5C 6S 7S KD 2C 3S 8S 8D TD\n5D 8C 9S JS AC 2C 5C 7D 8S QH\n2D 9C AS AH AC 3D 6D 7D TD QD\n4D 6S 9H QH QC 3D 6D 7H QD QS\n2H 2D 4C 4D 4S 3C 3D 3S 9S 9D";
+            using (var reader = new StreamReader("p054_poker.txt"))
             {
-                var data = reader.ReadLine();
-                var bin = Convert.FromBase64String(data);
-                writer.Write(bin);
-                writer.Flush();
-                writer.Close();
+                input = reader.ReadToEnd();
             }
-            Halt();
+
+            Euler54(input);
         }
 
         private static void Halt()
