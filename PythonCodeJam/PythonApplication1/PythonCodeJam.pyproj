@@ -6,7 +6,7 @@
     <ProjectGuid>7fe734f1-f6eb-482d-890c-a356c532f17b</ProjectGuid>
     <ProjectHome>
     </ProjectHome>
-    <StartupFile>PythonCodeJam.py</StartupFile>
+    <StartupFile>Polynesiaglot\Polynesiaglot.py</StartupFile>
     <SearchPath>
     </SearchPath>
     <WorkingDirectory>.</WorkingDirectory>
@@ -26,10 +26,16 @@
     <Compile Include="AlienLanguage\AlienLanguage.py">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="CodysJams\CodysJams.py">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="fibo.py">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="FileFixIt\FileFixIt.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Polynesiaglot\Polynesiaglot.py">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="PythonCodeJam.py" />
@@ -40,16 +46,23 @@
     <Compile Include="T9\T9.py">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Util\PrimeFactor.py">
+      <SubType>Code</SubType>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Folder Include="FileFixIt\" />
     <Folder Include="AlienLanguage\" />
+    <Folder Include="CodysJams\" />
+    <Folder Include="Util\" />
+    <Folder Include="Polynesiaglot\" />
     <Folder Include="ReverseWords\" />
     <Folder Include="T9\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="AlienLanguage\A-large-practice.in" />
     <Content Include="AlienLanguage\A-small-practice.in" />
+    <Content Include="CodysJams\A-small-practice.in" />
     <Content Include="FileFixIt\A-large-practice.in">
       <Publish>True</Publish>
     </Content>
